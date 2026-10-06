@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#4B2A68" />
+  <meta name="description" content="FreshTrace Bio — Smart Food Freshness Monitoring Platform" />
+  <title>FreshTrace Bio — Smart Food Freshness Monitoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+  <div id="toast-root" class="toast-root"></div>
+  <div id="modal-root"></div>
+
+  <header class="topbar">
+    <button class="brand" data-route="home" aria-label="FreshTrace Bio home">
+      <span class="brand-mark">FB</span>
+      <span>
+        <strong>FreshTrace</strong>
+        <small>Bio</small>
+      </span>
+    </button>
+    <nav class="topnav" aria-label="Main navigation">
+      <button data-route="home">Home</button>
+      <button data-route="dashboard">Dashboard</button>
+      <button data-route="register">Register Package</button>
+      <button data-route="qr">QR Generator</button>
+      <button data-route="scan">Scan QR</button>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="notif-btn" title="Notifications" aria-label="Notifications">⌁</button>
+      <button class="avatar" id="profile-btn">D</button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Workspace</div>
+      <button data-route="dashboard" class="side-link"><span>▦</span> Dashboard</button>
+      <button data-route="register" class="side-link"><span>＋</span> Register Package</button>
+      <button data-route="packages" class="side-link"><span>◫</span> My Packages</button>
+      <button data-route="qr" class="side-link"><span>▣</span> QR Generator</button>
+      <button data-route="scan" class="side-link"><span>⌗</span> Scan QR</button>
+      <button data-route="analytics" class="side-link"><span>⌁</span> Analytical</button>
+      <button data-route="research" class="side-link"><span>⌘</span> Research</button>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">System</div>
+      <button data-route="settings" class="side-link"><span>⚙</span> Settings</button>
+      <button id="reset-demo" class="side-link danger"><span>↺</span> Reset Demo Data</button>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sensor-status"><span class="status-dot online"></span><span>Demo sensors online</span></div>
+      <small>FreshTrace Bio v1.0 prototype</small>
+    </div>
+  </aside>
+
+  <main id="app" class="main-content"></main>
+
+  <div class="mobile-nav">
+    <button data-route="home"><span>⌂</span><small>Home</small></button>
+    <button data-route="dashboard"><span>▦</span><small>Dashboard</small></button>
+    <button data-route="register"><span>＋</span><small>Register</small></button>
+    <button data-route="qr"><span>▣</span><small>QR</small></button>
+    <button data-route="scan"><span>⌗</span><small>Scan</small></button>
+    <button data-route="analytics"><span>⌁</span><small>Analytical</small></button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
