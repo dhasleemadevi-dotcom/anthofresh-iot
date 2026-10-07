@@ -1,3 +1,4 @@
+const FIREBASE_URL = "https://freshtrace-bio-default-rtdb.asia-southeast1.firebasedatabase.app";
 const STORAGE_KEY = 'freshtrace_bio_state_v3';
 const DEFAULT_PUBLIC_BASE_URL = 'https://dhasleemadevi-dotcom.github.io/anthofresh-iot/';
 const nowISO = () => new Date().toISOString();
@@ -304,3 +305,24 @@ document.getElementById('reset-demo')?.addEventListener('click',resetDemo);docum
 window.addEventListener('hashchange',renderApp);window.addEventListener('load',()=>{if(!location.hash)location.hash='#home';else renderApp();});
 renderApp();
 window.navigate=navigate;window.copyText=copyText;window.openReport=openReport;window.simulateSensor=simulateSensor;window.closeModal=closeModal;
+async function testFirebase() {
+  try {
+    const res = await fetch(
+      FIREBASE_URL + "/packages/PKG001.json"
+    );
+
+    const data = await res.json();
+
+    console.log("Firebase Data:", data);
+
+    alert(
+      "Product: " + data.product +
+      "\nStatus: " + data.status +
+      "\nColor: " + data.color
+    );
+
+  } catch (err) {
+    console.error(err);
+    alert("Firebase connection failed");
+  }
+}
